@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="耀耀的博客">
 <meta property="og:description" content="最近看设计模式的时候看到一种Python实现的单例模式有用到元类来进行实现。因为工作上更多的是写业务逻辑，所以一直都没用过元类。好奇之下仔细看了看Python的元类，在这里对元类做些介绍。">
 <meta property="og:image" content="http://yaoyaoblog.xyz/blogImg/metaclass1.png">
-<meta property="og:updated_time" content="2017-12-06T12:15:18.368Z">
+<meta property="og:updated_time" content="2017-12-10T07:29:07.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python里的元类">
 <meta name="twitter:description" content="最近看设计模式的时候看到一种Python实现的单例模式有用到元类来进行实现。因为工作上更多的是写业务逻辑，所以一直都没用过元类。好奇之下仔细看了看Python的元类，在这里对元类做些介绍。">
@@ -177,7 +177,7 @@
 <p>这就是一种动态创建类的方式了</p>
 <h2 id="元类的使用"><a href="#元类的使用" class="headerlink" title="元类的使用"></a>元类的使用</h2><p>当想要控制类的创建，例如校验或修改类的属性的时候，就可以使用元类。<br>元类通过继承type实现<br>以一个很通用的例子来说明一下元类的使用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListMetaclass</span><span class="params">(type)</span>:</span></div><div class="line">    <span class="string">""" 用元类实现给类添加属性 """</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, name, bases, dct)</span>:</span></div><div class="line">        dct[<span class="string">'add'</span>] = <span class="keyword">lambda</span> self, value: self.append(value)</div><div class="line">        <span class="keyword">return</span> type.__new__(cls, name, bases, dct)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyList</span><span class="params">(list)</span>:</span></div><div class="line">    __metaclass__ = ListMetaclass</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>l = MyList()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>l.add(<span class="number">1</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(l)</div><div class="line">[<span class="number">1</span>]</div></pre></td></tr></table></figure></p>
 <p>可以在写一个类的时候为其添加<strong><strong>metaclass</strong></strong>属性，此时Python就会使用元类来创建类，例如上面的代码，<br>Python做了如下操作：A中有<strong>metaclass</strong>这个属性吗？如果有，Python会在内存中通过<strong>metaclass</strong>（此处为UpperAttrMetaclass）创建一个名字为A的类对象。<br>（注：如果A中没有找到<strong>metaclass</strong>而且A还有父类，那么Python会继续在父类中寻找<strong>metaclass</strong>属性，并尝试做和前面同样的操作。<br>如果Python在任何父类中都找不到<strong>metaclass</strong>，它就会在模块层次中去寻找<strong>metaclass</strong>，并尝试做同样的操作。<br>如果还是找不到<strong>metaclass</strong>,Python就会用内置的type来创建这个类对象。）<br>此时，新创建出来的MyList类就有了add方法</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是Python元类的一个大概介绍了；事实上在平常的业务里也用不到这个，需要用到元类的地方使用装饰器就可以解决。<br>不过好歹算是Python的一个黑科技，了解了解也是好的。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是Python元类的一个大概介绍了；事实上在平常的业务里也用不到这个，需要用到元类的地方使用<a href="http://yaoyaoblog.xyz/2017/06/30/Python%E8%A3%85%E9%A5%B0%E5%99%A8%E6%8E%A2%E8%AE%A8/">装饰器</a>就可以解决。<br>不过好歹算是Python的一个黑科技，了解了解也是好的。</p>
 
       
 
@@ -415,15 +415,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
               </li>
              
               <li class="article-tag-list-item">
