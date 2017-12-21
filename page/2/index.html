@@ -11,7 +11,7 @@
   <meta name="description" content="果壳网后端研发一枚">
 <meta property="og:type" content="website">
 <meta property="og:title" content="耀耀的博客">
-<meta property="og:url" content="http://yaoyaoblog.xyz/index.html">
+<meta property="og:url" content="http://yaoyaoblog.xyz/page/2/index.html">
 <meta property="og:site_name" content="耀耀的博客">
 <meta property="og:description" content="果壳网后端研发一枚">
 <meta name="twitter:card" content="summary">
@@ -144,29 +144,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-wtfPython—Python中一些奇妙的代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Python的引用机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/04/wtfPython—Python中一些奇妙的代码/">wtfPython—Python中一些奇妙的代码</a>
+      <a class="article-title" href="/2017/06/09/Python的引用机制/">Python引用机制</a>
     </h1>
   
 
         
-        <a href="/2017/09/04/wtfPython—Python中一些奇妙的代码/" class="archive-article-date">
-  	<time datetime="2017-09-04T13:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-04</time>
+        <a href="/2017/06/09/Python的引用机制/" class="archive-article-date">
+  	<time datetime="2017-06-09T11:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://github.com/satwikkansal/wtfpython#skipping-lines" target="_blank" rel="external">wtfPython</a>是github上的一个项目，作者收集了一些奇妙的Python代码片段，这些代码的输出结果会和我们想象中的不太一样；<br>通过探寻产生这种结果的内部原因，可以让我们对Python里的一些细节有更广泛的认知。<br>
+        <p>最近逛V2看到有人提到了一个关于Python赋值的问题<br>看了一下问题相关的讨论，自己去测试了一下，结果也是很有趣的<br>然后系统的看了看Python的引用机制，整理了一下自己对Python引用的理解</p>
         
-          <a class="article-more-a" href="/2017/09/04/wtfPython—Python中一些奇妙的代码/#more">more >></a>
+          <a class="article-more-a" href="/2017/06/09/Python的引用机制/#more">more >></a>
         
       
 
@@ -220,258 +220,29 @@
 
 
   
-    <article id="post-Flask的上下文机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-一位老程序员的反思(译文)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/15/Flask的上下文机制/">Flask的上下文机制</a>
+      <a class="article-title" href="/2017/05/03/一位老程序员的反思(译文)/">一位老程序员的反思(译文)</a>
     </h1>
   
 
         
-        <a href="/2017/07/15/Flask的上下文机制/" class="archive-article-date">
-  	<time datetime="2017-07-15T13:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
+        <a href="/2017/05/03/一位老程序员的反思(译文)/" class="archive-article-date">
+  	<time datetime="2017-05-03T14:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近开始看Flask的源码，过程中对以前半知半解的概念有了清晰的认知。<br>如今再看一些Flask的应用源码，也算是可以理解其中的一些代码原理了。<br>所以推荐大家都去看看那些比较著名的框架的源码，真的可以收获很多<br>下面结合源码讲讲Flask的上下文，希望对看到这篇博客的人理解Flask上下文能有所帮助<br>
+        <p>最近在湾区日报上看到一篇很不错的博客，大体是讲知识的几个特性和程序员对知识的处理，作者认为知识技能都是会过期的，而在程序员这个圈子里知识的保质期是比较短的。因此从长远看，我们应该多去掌握一些不容易过期的知识，例如算法、信息安全、性能优化、架构等等。<br>感觉程序员们可以看看，个人翻译水平不强，只能勉强做到”达”的地步，因此推荐英语能力不错的同学还是直接看<a href="http://www.bennorthrop.com/Essays/2016/reflections-of-an-old-programmer.php?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="external">原文</a>吧。</p>
         
-          <a class="article-more-a" href="/2017/07/15/Flask的上下文机制/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Flask</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python里的元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/15/Python里的元类/">Python里的元类</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/15/Python里的元类/" class="archive-article-date">
-  	<time datetime="2017-07-15T13:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近看设计模式的时候看到一种Python实现的单例模式有用到元类来进行实现。<br>因为工作上更多的是写业务逻辑，所以一直都没用过元类。<br>好奇之下仔细看了看Python的元类，在这里对元类做些介绍。<br>
-        
-          <a class="article-more-a" href="/2017/07/15/Python里的元类/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python装饰器探讨" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/30/Python装饰器探讨/">Python装饰器探讨</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/30/Python装饰器探讨/" class="archive-article-date">
-  	<time datetime="2017-06-30T14:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因为一直以来对Python的装饰器理解的都不是很透彻，所以最近详细看了看Python的装饰器部分。<br>结合装饰器设计模式以及Python本身实现的装饰器来说明一下装饰器这个概念。<br>
-        
-          <a class="article-more-a" href="/2017/06/30/Python装饰器探讨/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-少看剧，多读书(译文)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/29/少看剧，多读书(译文)/">少看剧，多读书(译文)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/29/少看剧，多读书(译文)/" class="archive-article-date">
-  	<time datetime="2017-06-29T13:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>湾区日报上看的一篇外文博客，讲的是读书的作用以及如何坚持读书。博客里提到的一些现代读书问题和他解决问题的方法都让人很有收获，推荐大家看看。</p>
-<p>原文在<a href="https://qz.com/895101/in-the-time-you-spend-on-social-media-each-year-you-could-read-200-books/" target="_blank" rel="external">这里</a>；作者在博客里引用了巴菲特的格言：成功的秘诀就是多读书，大多数人都知道这个道理，但却很少有人可以做到。<br>通过这句格言作者研究了想要达到一年看200本非小说书籍需要的时间，并与普通人花在看剧上的时间做了对比，结果令人惊讶。看完整篇文章，我想大家应该能对花时间读书这件事更有信心了。<br>
-        
-          <a class="article-more-a" href="/2017/06/29/少看剧，多读书(译文)/#more">more >></a>
+          <a class="article-more-a" href="/2017/05/03/一位老程序员的反思(译文)/#more">more >></a>
         
       
 
@@ -525,9 +296,234 @@
 
 
   
+    <article id="post-通过request获取用户信息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/19/通过request获取用户信息/">通过request获取用户信息</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/19/通过request获取用户信息/" class="archive-article-date">
+  	<time datetime="2017-04-19T08:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。</p>
+        
+          <a class="article-more-a" href="/2017/04/19/通过request获取用户信息/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-22岁生日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/15/22岁生日/">22岁生日</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/15/22岁生日/" class="archive-article-date">
+  	<time datetime="2017-04-15T15:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28996922&auto=0&height=66"></iframe><br>存于人世已是22个年头，特殊的日子总得纪念性的写点什么<br>于是决定对最近一年发生的事做个总结，记录一下个人的成长</p>
+<p>去年此时，刚结束实习回校准备毕设答辩<br>朋友间数月未见，前期自是一番浪荡<br>欢聚后的数月，经历了写毕设论文的纠结，做毕设答辩的紧张，好在结局还算圆满<br>最后时间走到了6月末，终归是毕业了</p>
+        
+          <a class="article-more-a" href="/2017/04/15/22岁生日/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">旧事</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python源码分析之OrderDict实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/11/Python源码分析之OrderDict实现/">Python源码分析之OrderedDict实现</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/11/Python源码分析之OrderDict实现/" class="archive-article-date">
+  	<time datetime="2017-04-11T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在写代码时用了一下Python里的OrderedDict类，因为好奇它的实现就去看了一下2.7里的源码，然后被它这种精简的思维给震撼到了。下面介绍一下OrderedDict的作用和具体实现思路</p>
+        
+          <a class="article-more-a" href="/2017/04/11/Python源码分析之OrderDict实现/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
   
 
