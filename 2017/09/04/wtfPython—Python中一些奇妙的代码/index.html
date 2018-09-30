@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yaoyaoblog.xyz">
-  <title>通过request获取用户信息 | 耀耀的博客</title>
+  <title>wtfPython—Python中一些奇妙的代码 | 耀耀的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。">
+  <meta name="description" content="wtfPython是github上的一个项目，作者收集了一些奇妙的Python代码片段，这些代码的输出结果会和我们想象中的不太一样；通过探寻产生这种结果的内部原因，可以让我们对Python里的一些细节有更广泛的认知。">
 <meta name="keywords" content="Python,技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过request获取用户信息">
-<meta property="og:url" content="http://yaoyaoblog.xyz/2017/04/19/通过request获取用户信息/index.html">
+<meta property="og:title" content="wtfPython—Python中一些奇妙的代码">
+<meta property="og:url" content="http://yaoyaoblog.xyz/2017/09/04/wtfPython—Python中一些奇妙的代码/index.html">
 <meta property="og:site_name" content="耀耀的博客">
-<meta property="og:description" content="当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。">
-<meta property="og:updated_time" content="2018-09-30T09:04:49.329Z">
+<meta property="og:description" content="wtfPython是github上的一个项目，作者收集了一些奇妙的Python代码片段，这些代码的输出结果会和我们想象中的不太一样；通过探寻产生这种结果的内部原因，可以让我们对Python里的一些细节有更广泛的认知。">
+<meta property="og:updated_time" content="2018-09-30T09:41:20.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过request获取用户信息">
-<meta name="twitter:description" content="当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。">
+<meta name="twitter:title" content="wtfPython—Python中一些奇妙的代码">
+<meta name="twitter:description" content="wtfPython是github上的一个项目，作者收集了一些奇妙的Python代码片段，这些代码的输出结果会和我们想象中的不太一样；通过探寻产生这种结果的内部原因，可以让我们对Python里的一些细节有更广泛的认知。">
   
     <link rel="alternative" href="/atom.xml" title="耀耀的博客" type="application/atom+xml">
   
@@ -144,20 +144,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-通过request获取用户信息" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-wtfPython—Python中一些奇妙的代码" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      通过request获取用户信息
+      wtfPython—Python中一些奇妙的代码
     </h1>
   
 
         
-        <a href="/2017/04/19/通过request获取用户信息/" class="archive-article-date">
-  	<time datetime="2017-04-19T08:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
+        <a href="/2017/09/04/wtfPython—Python中一些奇妙的代码/" class="archive-article-date">
+  	<time datetime="2017-09-04T13:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-04</time>
 </a>
         
         
@@ -169,14 +169,90 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。</p>
-<a id="more"></a>
-<h2 id="用户的终端设备信息"><a href="#用户的终端设备信息" class="headerlink" title="用户的终端设备信息"></a>用户的终端设备信息</h2><p>flask自带了request，当用户发送一个请求到后端服务器后，通过request可以获取到该请求的头部里的User Agent信息；通过该UA我们就可以获取到用户的终端设备类型、操作系统类型、以及访问该网站的浏览器类型；具体代码实现如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 根据User-Agent获取设备类型，系统类型与浏览器信号</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_device_by_ua</span><span class="params">(ua_string)</span>:</span></div><div class="line">    <span class="comment"># 此处使用了第三方库ua-parser，直接可以对ua进行解析</span></div><div class="line">    <span class="comment"># ua_string通过request.headers['User-Agent']获取</span></div><div class="line">    <span class="keyword">from</span> ua_parser <span class="keyword">import</span> user_agent_parser</div><div class="line">    ua_dict = user_agent_parser.Parse(ua_string)</div><div class="line">    user_agent_dict = ua_dict[<span class="string">'user_agent'</span>]</div><div class="line">    teminal_type = ua_dict[<span class="string">'device'</span>][<span class="string">'family'</span>]</div><div class="line">    <span class="keyword">if</span> teminal_type.upper() == <span class="string">'OTHER'</span>:</div><div class="line">        teminal_type = <span class="string">'PC'</span></div><div class="line">    user_agent_version = (user_agent_dict[<span class="string">'family'</span>] + <span class="string">'/'</span> +</div><div class="line">                          user_agent_dict[<span class="string">'major'</span>] + <span class="string">'.'</span> +</div><div class="line">                          user_agent_dict[<span class="string">'minor'</span>] + <span class="string">'.'</span> +</div><div class="line">                          user_agent_dict[<span class="string">'patch'</span>])</div><div class="line">    <span class="keyword">return</span> dict(zip((<span class="string">'TERMINAL_TYPE'</span>, <span class="string">'OS_TYPE'</span>, <span class="string">'LOGIN_DEV_SOFTWARE'</span>),</div><div class="line">                    (teminal_type,ua_dict[<span class="string">'os'</span>][<span class="string">'family'</span>],</div><div class="line">                    user_agent_version)))</div></pre></td></tr></table></figure>
-<p>ua-parser的基本思路就是对user-agent的那一串字符串做正则匹配，感兴趣的可以去看看github上的<a href="https://github.com/ua-parser/uap-python" target="_blank" rel="external">开源库</a><br>对于user-agent里的那一串字符具体的含义可以参考这篇博客<a href="http://litten.me/2014/09/26/history-of-browser-useragent/" target="_blank" rel="external">浏览器野史 UserAgent列传</a>，写得十分有趣</p>
-<h2 id="用户的IP与地域信息"><a href="#用户的IP与地域信息" class="headerlink" title="用户的IP与地域信息"></a>用户的IP与地域信息</h2><p>通过request我们还可以获取到用户的ip地址与端口号；而获取到ip后我们就可以根据ip来判断用户当时所处的地理位置；用户的ip地址与端口号获取代码实现如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> request</div><div class="line">user_ip = request.remote_addr</div><div class="line">user_port = request.environ.get(<span class="string">'REMOTE_PORT'</span>)</div></pre></td></tr></table></figure></p>
-<p>在获取到ip后，可以通过ip库来找到该ip对应的地域信息；ip库现在网络上比较权威的有淘宝的ip库，qq的纯甄库，以及百度的ip库；<br>不过这几个库都要钱，因此我在github上找了一个开源ip库<a href="https://github.com/lionsoul2014/ip2region" target="_blank" rel="external">ip region库</a>；<br>这个库是一个范围式的ip库，取了几个例子测试了一下，发现准确率还是很不错的；下面是通过这个ip库来做ip与地址转换的代码实现：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串式的ip地址不好比较大小，因此做个正相关转换</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_transfer_ip</span><span class="params">(ip_addr)</span>:</span></div><div class="line">    ip_set = [int(i) <span class="keyword">for</span> i <span class="keyword">in</span> ip_addr.split(<span class="string">'.'</span>)]</div><div class="line">    ip_number = (ip_set[<span class="number">0</span>] &lt;&lt; <span class="number">24</span>) + (ip_set[<span class="number">1</span>] &lt;&lt; <span class="number">16</span>) + (ip_set[<span class="number">2</span>] &lt;&lt; <span class="number">8</span>) + ip_set[<span class="number">3</span>]</div><div class="line">    <span class="keyword">return</span> ip_number</div><div class="line"><span class="comment"># 使用二分查找法来查找IP对应地域信息</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_scope_search</span><span class="params">(target_ip, ip_dict)</span>:</span></div><div class="line">    ip_scope_list = sorted(ip_dict.keys())</div><div class="line">    start = <span class="number">0</span></div><div class="line">    end = len(ip_scope_list)</div><div class="line">    <span class="comment"># 由于这个ip库的IP地址是范围式的，所以对应二分查找算法也需要做些修改</span></div><div class="line">    <span class="keyword">while</span> start &lt; end - <span class="number">1</span>:</div><div class="line">        mid = (start + end) / <span class="number">2</span></div><div class="line">        <span class="keyword">if</span> ip_scope_list[mid] &lt;= target_ip:</div><div class="line">            start = mid</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            end = mid</div><div class="line">    <span class="keyword">return</span> ip_dict[ip_scope_list[start]]</div><div class="line"><span class="comment"># 通过获取的ip找到相应地域信息</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_location_by_ip</span><span class="params">(ip)</span>:</span></div><div class="line">    ip_scope_list = []</div><div class="line">    ip_info_dict = &#123;&#125;</div><div class="line">    <span class="keyword">with</span> open(<span class="string">'_ip.txt'</span>,<span class="string">'r'</span>) <span class="keyword">as</span> f:</div><div class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</div><div class="line">            <span class="comment"># 该ip库使用的utf-8编码</span></div><div class="line">            line = line.decode(<span class="string">'utf-8'</span>)</div><div class="line">            info_list = line.split(<span class="string">'|'</span>)</div><div class="line">            start_ip = get_transfer_ip(info_list[<span class="number">0</span>])</div><div class="line">            ip_info_dict[start_ip] = info_list</div><div class="line">            ip_scope_list.append(start_ip)</div><div class="line">    ip_scope_list = sorted(list(set(ip_scope_list)))</div><div class="line">    ip_start = binary_search_scope(ip, ip_scope_list)</div><div class="line">    <span class="keyword">return</span> &#123;<span class="string">'loaction'</span>: <span class="string">'|'</span>.join(ip_info_dict[ip_start])&#125;</div></pre></td></tr></table></figure>
+        <p><a href="https://github.com/satwikkansal/wtfpython#skipping-lines" target="_blank" rel="external">wtfPython</a>是github上的一个项目，作者收集了一些奇妙的Python代码片段，这些代码的输出结果会和我们想象中的不太一样；<br>通过探寻产生这种结果的内部原因，可以让我们对Python里的一些细节有更广泛的认知。<br><a id="more"></a></p>
+<h3 id="1-字典键的隐式转换"><a href="#1-字典键的隐式转换" class="headerlink" title="1.字典键的隐式转换"></a>1.字典键的隐式转换</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">some_dict = &#123;&#125;</div><div class="line">some_dict[<span class="number">5.5</span>] = <span class="string">"Ruby"</span></div><div class="line">some_dict[<span class="number">5.0</span>] = <span class="string">"JavaScript"</span></div><div class="line">some_dict[<span class="number">5</span>] = <span class="string">"Python"</span></div></pre></td></tr></table></figure>
+<p>输出如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; some_dict</div><div class="line">&#123;5.0: &quot;Python&quot;, 5.5: &quot;Ruby&quot;&#125;</div><div class="line">&gt;&gt;&gt; some_dict[5.5]</div><div class="line">&quot;Ruby&quot;</div><div class="line">&gt;&gt;&gt; some_dict[5.0]</div><div class="line">&quot;Python&quot;</div><div class="line">&gt;&gt;&gt; some_dict[5]</div><div class="line">&quot;Python&quot;</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong>：</p>
+<ul>
+<li>Python的字典键的比较是通过哈希值来比较的</li>
+<li>在Python里如果两个不可变对象的值相等，那他们的哈希也是一样的</li>
+</ul>
+<p>因此此处hash(5) == hash(5.0)是True的，所以键被隐式的转换了</p>
+<h3 id="2-生成器执行时间的差异"><a href="#2-生成器执行时间的差异" class="headerlink" title="2.生成器执行时间的差异"></a>2.生成器执行时间的差异</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">array = [<span class="number">1</span>, <span class="number">8</span>, <span class="number">15</span>]</div><div class="line">g = (x <span class="keyword">for</span> x <span class="keyword">in</span> array <span class="keyword">if</span> array.count(x) &gt; <span class="number">0</span>)</div><div class="line">array = [<span class="number">2</span>, <span class="number">8</span>, <span class="number">22</span>]</div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print(list(g))</div><div class="line">[8]</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong></p>
+<ul>
+<li>在一个生成器表达式里，in的操作是在声明时求值的，而if是在运行期求值的</li>
+<li>所以在运行期之前，array已经被重新分配成了[2,8,22],x的值也是2，8，22</li>
+</ul>
+<h3 id="3-在列表迭代式删除item"><a href="#3-在列表迭代式删除item" class="headerlink" title="3.在列表迭代式删除item"></a>3.在列表迭代式删除item</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">list_1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line">list_2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line">list_3 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line">list_4 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"></div><div class="line"><span class="keyword">for</span> idx, item <span class="keyword">in</span> enumerate(list_1):</div><div class="line">    <span class="keyword">del</span> item</div><div class="line"></div><div class="line"><span class="keyword">for</span> idx, item <span class="keyword">in</span> enumerate(list_2):</div><div class="line">    list_2.remove(item)</div><div class="line"></div><div class="line"><span class="keyword">for</span> idx, item <span class="keyword">in</span> enumerate(list_3[:]):</div><div class="line">    list_3.remove(item)</div><div class="line"></div><div class="line"><span class="keyword">for</span> idx, item <span class="keyword">in</span> enumerate(list_4):</div><div class="line">    list_4.pop(idx)</div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; list_1</div><div class="line">[1, 2, 3, 4]</div><div class="line">&gt;&gt;&gt; list_2</div><div class="line">[2, 4]</div><div class="line">&gt;&gt;&gt; list_3</div><div class="line">[]</div><div class="line">&gt;&gt;&gt; list_4</div><div class="line">[2, 4]</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong></p>
+<ul>
+<li>其实只有list3才算是合格的写法，对一个正在迭代的对象进行修改并不是一个很好的选择，正确的做法应该是建立一份该对象的拷贝来进行迭代</li>
+<li>对于list1，del item删除的只是item变量而不是变量指向的数据，对列表本身没有影响</li>
+<li>对于list2和list4，因为列表的迭代是根据索引来的，第一次删掉了索引为0的1，剩下[2, 3, 4]，然后移除索引 1（此时为3），剩下了[2, 4]，此时只有2个元素，循环结束</li>
+</ul>
+<h3 id="4-else的不同处理"><a href="#4-else的不同处理" class="headerlink" title="4.else的不同处理"></a>4.else的不同处理</h3><p>对于循环的else<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">does_exists_num</span><span class="params">(l, to_find)</span>:</span></div><div class="line">      <span class="keyword">for</span> num <span class="keyword">in</span> l:</div><div class="line">          <span class="keyword">if</span> num == to_find:</div><div class="line">              print(<span class="string">"Exists!"</span>)</div><div class="line">              <span class="keyword">break</span></div><div class="line">      <span class="keyword">else</span>:</div><div class="line">          print(<span class="string">"Does not exist"</span>)</div></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; some_list = [1, 2, 3, 4, 5]</div><div class="line">&gt;&gt;&gt; does_exists_num(some_list, 4)</div><div class="line">Exists!</div><div class="line">&gt;&gt;&gt; does_exists_num(some_list, -1)</div><div class="line">Does not exist</div></pre></td></tr></table></figure></p>
+<p>对于try的else<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">pass</span></div><div class="line"><span class="keyword">except</span>:</div><div class="line">    print(<span class="string">"Exception occurred!!!"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">"Try block executed successfully..."</span>)</div></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Try block executed successfully...</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong></p>
+<ul>
+<li>循环后的else只会在经过了所有迭代且没有出现break的时候才会执行</li>
+<li>一个try模块后的else会在try里的代码成功执行完后去执行</li>
+</ul>
+<h3 id="5-python里的is"><a href="#5-python里的is" class="headerlink" title="5.python里的is"></a>5.python里的is</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">256</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">256</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">257</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">257</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
+<p><strong>原因</strong></p>
+<ul>
+<li>is和==是不一样的；is判断的是两个对象是否是同一个对象，而==判断的是两个对象的值是否相等；即is是既要值相等又要引用一致</li>
+<li>在Python中-5~256因为被经常使用所以被设计成固定存在的对象</li>
+</ul>
+<h3 id="6-循环里的局部变量泄露"><a href="#6-循环里的局部变量泄露" class="headerlink" title="6.循环里的局部变量泄露"></a>6.循环里的局部变量泄露</h3><h4 id="代码段1"><a href="#代码段1" class="headerlink" title="代码段1"></a>代码段1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">7</span>):</div><div class="line">    <span class="keyword">if</span> x == <span class="number">6</span>:</div><div class="line">        print(x, <span class="string">': for x inside loop'</span>)</div><div class="line">print(x, <span class="string">': x in global'</span>)</div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">6 : for x inside loop</div><div class="line">6 : x in global</div></pre></td></tr></table></figure></p>
+<h4 id="代码段2"><a href="#代码段2" class="headerlink" title="代码段2"></a>代码段2</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># This time let's initialize x first</span></div><div class="line">x = <span class="number">-1</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">7</span>):</div><div class="line">    <span class="keyword">if</span> x == <span class="number">6</span>:</div><div class="line">        print(x, <span class="string">': for x inside loop'</span>)</div><div class="line">print(x, <span class="string">': x in global'</span>)</div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">6 : for x inside loop</div><div class="line">6 : x in global</div></pre></td></tr></table></figure></p>
+<h4 id="代码段3"><a href="#代码段3" class="headerlink" title="代码段3"></a>代码段3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x = <span class="number">1</span></div><div class="line">print([x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>)])</div><div class="line">print(x, <span class="string">': x in global'</span>)</div></pre></td></tr></table></figure>
+<p>在Python2.x里的输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[0, 1, 2, 3, 4]</div><div class="line">(4, &apos;: x in global&apos;)</div></pre></td></tr></table></figure></p>
+<p>在Python3.x里的输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[0, 1, 2, 3, 4]</div><div class="line">1 : x in global</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong></p>
+<ul>
+<li>对于代码段1，在Python中，for循环可以使用包含他们的命名空间的变量，并将他们自己定义的循环变量保存下来；* 对于代码段2，如果我们在全局命名空间里显示定义for循环变量，则循环变量会重新绑定到现有变量上。</li>
+<li>对于代码段3，在Python3.x中改变了对列表解析的语法形式；Python2.x中，列表解析的语法形式为：[… for var in item1, item2, …]；而Python3.x的列表解析式为：[… for var in (item1, item2, …)]，这种情况下不会发生循环变量的泄露</li>
+</ul>
+<h3 id="7-和-的区别"><a href="#7-和-的区别" class="headerlink" title="7.+和+=的区别"></a>7.+和+=的区别</h3><h4 id="代码段1-1"><a href="#代码段1-1" class="headerlink" title="代码段1"></a>代码段1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line">b = a</div><div class="line">a = a + [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; a</div><div class="line">[1, 2, 3, 4, 5, 6, 7, 8]</div><div class="line">&gt;&gt;&gt; b</div><div class="line">[1, 2, 3, 4]</div></pre></td></tr></table></figure></p>
+<h4 id="代码段2-1"><a href="#代码段2-1" class="headerlink" title="代码段2"></a>代码段2</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line">b = a</div><div class="line">a += [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; a</div><div class="line">[1, 2, 3, 4, 5, 6, 7, 8]</div><div class="line">&gt;&gt;&gt; b</div><div class="line">[1, 2, 3, 4, 5, 6, 7, 8]</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong></p>
+<ul>
+<li>a = a + b的操作生成了一个新的对象并建立了一个新的引用</li>
+<li>a += b是在a这个列表上做extend操作</li>
+</ul>
+<h3 id="8-关于try—finally里的return"><a href="#8-关于try—finally里的return" class="headerlink" title="8.关于try—finally里的return"></a>8.关于try—finally里的return</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">some_func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">return</span> <span class="string">'from_try'</span></div><div class="line">    <span class="keyword">finally</span>:</div><div class="line">        <span class="keyword">return</span> <span class="string">'from_finally'</span></div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; some_func()</div><div class="line">&apos;from_finally&apos;</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong></p>
+<ul>
+<li>在try…finally这种写法里面，finally中的return语句永远是最后一个执行</li>
+<li>一个函数的return的值是由最后一个return语句来决定的</li>
+</ul>
+<h3 id="9-True-False"><a href="#9-True-False" class="headerlink" title="9.True=False"></a>9.True=False</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">True</span> = <span class="keyword">False</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span> == <span class="keyword">False</span>:</div><div class="line">    print(<span class="string">"I've lost faith in truth!"</span>)</div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">I&apos;ve lost faith in truth!</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong></p>
+<ul>
+<li>最开始的时候，Python是没有bool类型的（使用0表示false，使用非0值表示真），后来加上了True，False和bool类型；但是为了向后兼容性，True和False并没有被设置成常量，而只是一个内建变量，所以可以被赋值修改</li>
+<li>在Python3当中，因为并没有向后兼容，所以不会有这种情况发生</li>
+</ul>
+<h3 id="10-一步操作，从有到无"><a href="#10-一步操作，从有到无" class="headerlink" title="10.一步操作，从有到无"></a>10.一步操作，从有到无</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">some_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">some_dict = &#123;</div><div class="line">  <span class="string">"key_1"</span>: <span class="number">1</span>,</div><div class="line">  <span class="string">"key_2"</span>: <span class="number">2</span>,</div><div class="line">  <span class="string">"key_3"</span>: <span class="number">3</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">some_list = some_list.append(<span class="number">4</span>)</div><div class="line">some_dict = some_dict.update(&#123;<span class="string">"key_4"</span>: <span class="number">4</span>&#125;)</div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print(some_list)</div><div class="line">None</div><div class="line">&gt;&gt;&gt; print(some_dict)</div><div class="line">None</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong><br>许多修改序列/映射对象的方法（例如list.append, dict.update, list.sort等等）都是直接修改对象并返回一个None；所以平常碰到这种直接修改的操作，应该避免直接赋值。</p>
+<h3 id="11-Python的for"><a href="#11-Python的for" class="headerlink" title="11.Python的for"></a>11.Python的for</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</div><div class="line">    print(i)</div><div class="line">    i = <span class="number">10</span></div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0</div><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td></tr></table></figure></p>
+<p><strong>原因</strong></p>
+<ul>
+<li>Python的for循环机制是每次迭代到下一项的时候都会解包并分配一次；即range(4)里的四个值在每次迭代的时候都会解包一次并赋值；所以i = 10对迭代没有影响</li>
+</ul>
+
       
 
       
@@ -249,7 +325,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yaoyaoblog.xyz/2017/04/19/通过request获取用户信息/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yaoyaoblog.xyz/2017/09/04/wtfPython—Python中一些奇妙的代码/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -261,6 +337,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/15/Python里的元类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python里的元类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -282,7 +368,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#用户的终端设备信息"><span class="toc-number">1.</span> <span class="toc-text">用户的终端设备信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户的IP与地域信息"><span class="toc-number">2.</span> <span class="toc-text">用户的IP与地域信息</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-字典键的隐式转换"><span class="toc-number">1.</span> <span class="toc-text">1.字典键的隐式转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-生成器执行时间的差异"><span class="toc-number">2.</span> <span class="toc-text">2.生成器执行时间的差异</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-在列表迭代式删除item"><span class="toc-number">3.</span> <span class="toc-text">3.在列表迭代式删除item</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-else的不同处理"><span class="toc-number">4.</span> <span class="toc-text">4.else的不同处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-python里的is"><span class="toc-number">5.</span> <span class="toc-text">5.python里的is</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-循环里的局部变量泄露"><span class="toc-number">6.</span> <span class="toc-text">6.循环里的局部变量泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码段1"><span class="toc-number">6.1.</span> <span class="toc-text">代码段1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码段2"><span class="toc-number">6.2.</span> <span class="toc-text">代码段2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码段3"><span class="toc-number">6.3.</span> <span class="toc-text">代码段3</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-和-的区别"><span class="toc-number">7.</span> <span class="toc-text">7.+和+=的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码段1-1"><span class="toc-number">7.1.</span> <span class="toc-text">代码段1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码段2-1"><span class="toc-number">7.2.</span> <span class="toc-text">代码段2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-关于try—finally里的return"><span class="toc-number">8.</span> <span class="toc-text">8.关于try—finally里的return</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-True-False"><span class="toc-number">9.</span> <span class="toc-text">9.True=False</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-一步操作，从有到无"><span class="toc-number">10.</span> <span class="toc-text">10.一步操作，从有到无</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Python的for"><span class="toc-number">11.</span> <span class="toc-text">11.Python的for</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -304,7 +390,7 @@
   
 
   
-  <div id="valine-ctn" class="valine-ctn article"></div>
+  <div id="valine-ctn" class="valine-ctn article" style="padding: 30px 50px; margin-top: -30px;"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>

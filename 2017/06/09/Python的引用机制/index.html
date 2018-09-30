@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yaoyaoblog.xyz">
-  <title>Tag: Python | 耀耀的博客</title>
+  <title>Python引用机制 | 耀耀的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="果壳网后端研发一枚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="耀耀的博客">
-<meta property="og:url" content="http://yaoyaoblog.xyz/tags/Python/index.html">
+  <meta name="description" content="最近逛V2看到有人提到了一个关于Python赋值的问题看了一下问题相关的讨论，自己去测试了一下，结果也是很有趣的然后系统的看了看Python的引用机制，整理了一下自己对Python引用的理解">
+<meta name="keywords" content="Python,技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python引用机制">
+<meta property="og:url" content="http://yaoyaoblog.xyz/2017/06/09/Python的引用机制/index.html">
 <meta property="og:site_name" content="耀耀的博客">
-<meta property="og:description" content="果壳网后端研发一枚">
+<meta property="og:description" content="最近逛V2看到有人提到了一个关于Python赋值的问题看了一下问题相关的讨论，自己去测试了一下，结果也是很有趣的然后系统的看了看Python的引用机制，整理了一下自己对Python引用的理解">
+<meta property="og:updated_time" content="2018-09-30T09:41:20.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="耀耀的博客">
-<meta name="twitter:description" content="果壳网后端研发一枚">
+<meta name="twitter:title" content="Python引用机制">
+<meta name="twitter:description" content="最近逛V2看到有人提到了一个关于Python赋值的问题看了一下问题相关的讨论，自己去测试了一下，结果也是很有趣的然后系统的看了看Python的引用机制，整理了一下自己对Python引用的理解">
   
     <link rel="alternative" href="/atom.xml" title="耀耀的博客" type="application/atom+xml">
   
@@ -142,162 +144,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python的引用机制" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/04/wtfPython—Python中一些奇妙的代码/" class="archive-article-date">
-  	<time datetime="2017-09-04T13:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/04/wtfPython—Python中一些奇妙的代码/">wtfPython—Python中一些奇妙的代码</a>
+    <h1 class="article-title" itemprop="name">
+      Python引用机制
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/15/Python里的元类/" class="archive-article-date">
-  	<time datetime="2017-07-15T13:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/15/Python里的元类/">Python里的元类</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/30/Python装饰器探讨/" class="archive-article-date">
-  	<time datetime="2017-06-30T14:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/30/Python装饰器探讨/">Python装饰器探讨</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/09/Python的引用机制/" class="archive-article-date">
+        
+        <a href="/2017/06/09/Python的引用机制/" class="archive-article-date">
   	<time datetime="2017-06-09T11:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/09/Python的引用机制/">Python引用机制</a>
-    </h1>
-  
+        
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近逛V2看到有人提到了一个关于Python赋值的问题<br>看了一下问题相关的讨论，自己去测试了一下，结果也是很有趣的<br>然后系统的看了看Python的引用机制，整理了一下自己对Python引用的理解</p>
+<a id="more"></a>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>首先有这么一道题：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = [[<span class="number">0</span>]*<span class="number">3</span>]*<span class="number">5</span></div><div class="line">a[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span></div></pre></td></tr></table></figure>
+<p>请问此时的a的值是什么？<br>一开始我以为答案是[[1, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]<br>然而事实上答案是[[1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]]</p>
+<p>再看下面这道题：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>, <span class="number">2</span>]</div><div class="line">a = [a, a, <span class="keyword">None</span>]</div><div class="line">b = [<span class="number">1</span>, <span class="number">2</span>]</div><div class="line">b[:] = [b, b, <span class="keyword">None</span>]</div><div class="line">c = [<span class="number">1</span>, <span class="number">2</span>]</div><div class="line">c[<span class="number">0</span>] = [c, c, <span class="keyword">None</span>]</div></pre></td></tr></table></figure>
+<p>请问此时的a，b，c各是多少？<br>正确答案是a的值为[[1, 2], [1, 2], None]<br>b的值为[[…], […], None]<br>c的值为[[[…], […], None], 2]<br>为了理解这两道题的答案，就得先来了解一下Python的引用机制了</p>
+<h2 id="Python引用机制"><a href="#Python引用机制" class="headerlink" title="Python引用机制"></a>Python引用机制</h2><p>在Python中变量名和对象是分离的<br>因为Python中的传递都是“对象引用”的方式来传递<br>所以也可以说在Python中，引用和对象是分离的</p>
+<h3 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">In[171]: a = 1</div><div class="line">In[172]: id(a)</div><div class="line">Out[171]: 140526342944360</div><div class="line">In[173]: a = 2</div><div class="line">In[174]: id(a)</div><div class="line">Out[173]: 140526342944336</div></pre></td></tr></table></figure>
+<p>第一个赋值语句中，1是存储在内存中的一个对象，通过赋值引用a指向了对象1<br>第二个赋值语句中，内存中尽力了另一个数字型对象2，通过赋值将引用a指向了2<br>此时，对象1不再有引用指向他，他就会被python的内存处理机制当做垃圾回收，释放内存</p>
+<h3 id="示例二"><a href="#示例二" class="headerlink" title="示例二"></a>示例二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">In[175]: a = 3</div><div class="line">In[176]: id(a)</div><div class="line">Out[175]: 140526342944312</div><div class="line">In[177]: b = 3</div><div class="line">In[178]: id(b)</div><div class="line">Out[177]: 140526342944312</div></pre></td></tr></table></figure>
+<p>引用a与引用b指向了同一个对象<br>由于在Python中整数和短小字符都会被缓存（为了性能考虑，不然不停创建销毁太耗性能）<br>因此两个引用指向的对象是同一个<br>不过这种也只限于整数和短字符了，如果是列表这种就不是同一个id了</p>
+<h3 id="示例三"><a href="#示例三" class="headerlink" title="示例三"></a>示例三</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">In[179]: a = 4</div><div class="line">In[180]: b = a</div><div class="line">In[181]: id(a)</div><div class="line">Out[180]: 140526342944288</div><div class="line">In[182]: id(b)</div><div class="line">Out[181]: 140526342944288</div><div class="line">In[183]: a = a + 2</div><div class="line">In[184]: id(a)</div><div class="line">Out[183]: 140526342944240</div><div class="line">In[185]: id(b)</div><div class="line">Out[184]: 140526342944288</div><div class="line">In[186]: a</div><div class="line">Out[185]: 6</div><div class="line">In[187]: b</div><div class="line">Out[186]: 4</div></pre></td></tr></table></figure>
+<p>一开始的时候创建一个整形对象4，让引用a指向这个对象<br>再让引用b指向引用a指向的那个对象，此时a与b都指向同一个对象<br>接下来的赋值语句使a的引用发生了改变，指向了新的整形对象6，而b依然指向4<br>因此可以看出即是多个引用指向同一个对象，如果一个引用值发生了变化，那么这个引用实际上指向了一个新引用，并不影响其他的引用<br>即各个引用互相独立，互不影响</p>
+<h3 id="示例四"><a href="#示例四" class="headerlink" title="示例四"></a>示例四</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">In[188]: L1 = [1, 2 ,3]</div><div class="line">In[189]: L2 = L1</div><div class="line">In[190]: id(L1)</div><div class="line">Out[189]: 4459145264</div><div class="line">In[191]: id(L2)</div><div class="line">Out[190]: 4459145264</div><div class="line">In[192]: L1[0] = 5</div><div class="line">In[193]: id(L1)</div><div class="line">Out[192]: 4459145264</div><div class="line">In[194]: id(L2)</div><div class="line">Out[193]: 4459145264</div><div class="line">In[195]: L1</div><div class="line">Out[194]: [5, 2, 3]</div><div class="line">In[196]: L2</div><div class="line">Out[195]: [5, 2, 3]</div></pre></td></tr></table></figure>
+<p>与示例三类似，不同的是此时引用指向的对象是一个列表<br>而在python中列表是一个可变类型（通过引用其元素，改变对象自身的这种对象类型称为可变数据对象）<br>在该示例中，L1，L2的指向没有发生变化，依然指向那个列表<br>但列表本身包含了多个引用的对象（每个引用是一个元素，比如L1[0]，L1[1]…, 每个引用指向一个对象，比如1,2,3)<br>而L1[0] = 5这一赋值操作，并不是改变L1的指向，而是对L1[0], 也就是列表对象的一部份进行操作，所以所有指向该对象的引用都受到影响<br>之前的数字和字符串是不可变数据对象，不能改变对象本身，只能改变引用的指向</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>看了上面的Python引用机制后，对于问题一的答案就很容易理解了。<br>a = [[0]3]5最后生成的是一个包含五个列表的列表[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]<br>这五个列表指向的都是同一个列表对象[0, 0, 0]，这个对象本身包含了对整数0这个对象的引用<br>而a[0][0] = 1这一操作改变了这个对象的第一个引用的对象，将其改成了1<br>但是该操作对另外两个引用不会造成影响（因为0是整数，不可变，各个引用此时相互独立）<br>所以最后的结果是[[1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]]<br>这个地方还有一个坑就是[0]3的结果是[0, 0, 0]而不是[[0],[0],[0]]<br>因为这个操作其实是相加，[0]*3即是[0]+[0]+[0]结果为[0, 0, 0]</p>
+<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>第一种情况下的引用a一开始指向了对象[1，2]<br>下面的赋值语句则是先新建了一个对象[a, a, None]<br>其中包含两个引用指向[1, 2]，所以改对象为[[1, 2], [1, 2], None]<br>然后将引用a指向了这个新对象<br>第二种情况下，a[:]事实上是新建了一个对象<br>a[:]是一个slice操作，其底层实现如下代码所示:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">static PyObject *</div><div class="line">list_slice(PyListObject *a, Py_ssize_t ilow, Py_ssize_t ihigh)</div><div class="line">&#123;</div><div class="line">    PyListObject *np;</div><div class="line">    PyObject **src, **dest;</div><div class="line">    Py_ssize_t i, len;</div><div class="line">    <span class="keyword">if</span> (ilow &lt; <span class="number">0</span>)</div><div class="line">        ilow = <span class="number">0</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (ilow &gt; Py_SIZE(a))</div><div class="line">        ilow = Py_SIZE(a);</div><div class="line">    <span class="keyword">if</span> (ihigh &lt; ilow)</div><div class="line">        ihigh = ilow;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (ihigh &gt; Py_SIZE(a))</div><div class="line">        ihigh = Py_SIZE(a);</div><div class="line">    len = ihigh - ilow;</div><div class="line">    np = (PyListObject *) PyList_New(len);</div><div class="line">    <span class="keyword">if</span> (np == NULL)</div><div class="line">        <span class="keyword">return</span> NULL;</div><div class="line">    src = a-&gt;ob_item + ilow;</div><div class="line">    dest = np-&gt;ob_item;</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">        PyObject *v = src[i];</div><div class="line">        Py_INCREF(v);</div><div class="line">        dest[i] = v;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> (PyObject *)np;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上述代码中的np = (PyListObject *) PyList_New(len)<br>这一句说明了slice操作会新分配内存出来，是一个新的对象了<br>此时对b[:]执行赋值操作，改变的不是b的引用，而是b列表里的每个部分指向的引用<br>于是此时b引用的对象列表里的引用指向的是[b, b, None]，造成循环<br>所以最后结果为[[…], […], None]（此处之所以是[…]是Python底层实现的一种默认输出，底层源码如下）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4</span></div><div class="line"><span class="number">5</span></div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">7</span></div><div class="line"><span class="number">8</span></div><div class="line"><span class="number">9</span></div><div class="line"><span class="number">10</span></div><div class="line"><span class="number">11</span></div><div class="line">static PyObject *</div><div class="line">list_repr(PyListObject *v)</div><div class="line">&#123;</div><div class="line">    Py_ssize_t i;</div><div class="line">    PyObject *s, *temp;</div><div class="line">    PyObject *pieces = NULL, *result = NULL;</div><div class="line">    i = Py_ReprEnter((PyObject*)v);</div><div class="line">    <span class="keyword">if</span> (i != <span class="number">0</span>) &#123;</div><div class="line">        return i &gt; 0 ? PyString_FromString("[...]") : NULL;</div><div class="line">    &#125;</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>具体实现可以自己去看源码，此处就不详解了</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -313,61 +213,145 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yaoyaoblog.xyz/2017/06/09/Python的引用机制/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/11/Python源码分析之OrderDict实现/" class="archive-article-date">
-  	<time datetime="2017-04-11T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-11</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/06/30/Python装饰器探讨/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python装饰器探讨
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/11/Python源码分析之OrderDict实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python源码分析之OrderedDict实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/11/Python源码分析之OrderDict实现/">Python源码分析之OrderedDict实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python引用机制"><span class="toc-number">2.</span> <span class="toc-text">Python引用机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例一"><span class="toc-number">2.1.</span> <span class="toc-text">示例一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例二"><span class="toc-number">2.2.</span> <span class="toc-text">示例二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例三"><span class="toc-number">2.3.</span> <span class="toc-text">示例三</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例四"><span class="toc-number">2.4.</span> <span class="toc-text">示例四</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解答"><span class="toc-number">3.</span> <span class="toc-text">解答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题一"><span class="toc-number">3.1.</span> <span class="toc-text">问题一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题二"><span class="toc-number">3.2.</span> <span class="toc-text">问题二</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
+
+  
+
+  
+  <div id="valine-ctn" class="valine-ctn article" style="padding: 30px 50px; margin-top: -30px;"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+var valine = new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV,
+            el: '#valine-ctn', //
+            app_id: 'emcA3K1pel8Ulj26nz7Jrd10-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: 'G53Ikb8jXVsH1BulgHxgPP7R', // 这里填写上面得到的APP KEY
+            placeholder: '欢迎评论哟' // [v1.0.7 new]留言框占位提示文字
+        })
+</script>
+
+  
 
 
           </div>
@@ -398,9 +382,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
