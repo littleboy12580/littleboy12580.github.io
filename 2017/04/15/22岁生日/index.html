@@ -302,21 +302,23 @@
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+  
+  <div id="valine-ctn"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="./dist/Valine.min.js"></script>
 <script>
-var gitment = new Gitment({
-  id: "http://yaoyaoblog.xyz/2017/04/15/22岁生日/",
-  owner: 'littleboy12580',
-  repo: 'littleboy12580.github.io',
-  oauth: {
-    client_id: '4e7ce0b2426384c7042c',
-    client_secret: '56f036a6b2ed37d9bfd54ab1f848dc554d5a8a3e',
-  },
-})
-gitment.render('gitment-ctn')
+var valine = new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV,
+            el: '.comment', //
+            app_id: 'emcA3K1pel8Ulj26nz7Jrd10-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: 'G53Ikb8jXVsH1BulgHxgPP7R', // 这里填写上面得到的APP KEY
+            placeholder: '欢迎评论哟' // [v1.0.7 new]留言框占位提示文字
+        })
+valine.render('valine-ctn')
 </script>
+
   
 
 
