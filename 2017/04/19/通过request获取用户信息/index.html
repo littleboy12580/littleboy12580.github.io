@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yaoyaoblog.xyz">
-  <title>22岁生日 | 耀耀的博客</title>
+  <title>通过request获取用户信息 | 耀耀的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="存于人世已是22个年头，特殊的日子总得纪念性的写点什么于是决定对最近一年发生的事做个总结，记录一下个人的成长 去年此时，刚结束实习回校准备毕设答辩朋友间数月未见，前期自是一番浪荡欢聚后的数月，经历了写毕设论文的纠结，做毕设答辩的紧张，好在结局还算圆满最后时间走到了6月末，终归是毕业了">
-<meta name="keywords" content="旧事">
+  <meta name="description" content="当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。">
+<meta name="keywords" content="Python,技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="22岁生日">
-<meta property="og:url" content="http://yaoyaoblog.xyz/2017/04/15/22岁生日/index.html">
+<meta property="og:title" content="通过request获取用户信息">
+<meta property="og:url" content="http://yaoyaoblog.xyz/2017/04/19/通过request获取用户信息/index.html">
 <meta property="og:site_name" content="耀耀的博客">
-<meta property="og:description" content="存于人世已是22个年头，特殊的日子总得纪念性的写点什么于是决定对最近一年发生的事做个总结，记录一下个人的成长 去年此时，刚结束实习回校准备毕设答辩朋友间数月未见，前期自是一番浪荡欢聚后的数月，经历了写毕设论文的纠结，做毕设答辩的紧张，好在结局还算圆满最后时间走到了6月末，终归是毕业了">
-<meta property="og:image" content="http://yaoyaoblog.xyz/blogImg/onlymyself.png">
-<meta property="og:updated_time" content="2017-09-11T09:38:53.000Z">
+<meta property="og:description" content="当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。">
+<meta property="og:updated_time" content="2018-09-30T09:04:49.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="22岁生日">
-<meta name="twitter:description" content="存于人世已是22个年头，特殊的日子总得纪念性的写点什么于是决定对最近一年发生的事做个总结，记录一下个人的成长 去年此时，刚结束实习回校准备毕设答辩朋友间数月未见，前期自是一番浪荡欢聚后的数月，经历了写毕设论文的纠结，做毕设答辩的紧张，好在结局还算圆满最后时间走到了6月末，终归是毕业了">
-<meta name="twitter:image" content="http://yaoyaoblog.xyz/blogImg/onlymyself.png">
+<meta name="twitter:title" content="通过request获取用户信息">
+<meta name="twitter:description" content="当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。">
   
     <link rel="alternative" href="/atom.xml" title="耀耀的博客" type="application/atom+xml">
   
@@ -146,20 +144,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-22岁生日" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-通过request获取用户信息" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      22岁生日
+      通过request获取用户信息
     </h1>
   
 
         
-        <a href="/2017/04/15/22岁生日/" class="archive-article-date">
-  	<time datetime="2017-04-15T15:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-15</time>
+        <a href="/2017/04/19/通过request获取用户信息/" class="archive-article-date">
+  	<time datetime="2017-04-19T08:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
 </a>
         
         
@@ -171,16 +169,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28996922&auto=0&height=66"></iframe><br>存于人世已是22个年头，特殊的日子总得纪念性的写点什么<br>于是决定对最近一年发生的事做个总结，记录一下个人的成长</p>
-<p>去年此时，刚结束实习回校准备毕设答辩<br>朋友间数月未见，前期自是一番浪荡<br>欢聚后的数月，经历了写毕设论文的纠结，做毕设答辩的紧张，好在结局还算圆满<br>最后时间走到了6月末，终归是毕业了</p>
+        <p>当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。</p>
 <a id="more"></a>
-<h2 id="毕业的分离"><a href="#毕业的分离" class="headerlink" title="毕业的分离"></a>毕业的分离</h2><p>毕业的前几天，班级全员一起拍了毕业照<br>生活区到学苑桥，教学楼到大操场，图书馆到校门口<br>一路走一路拍，说说笑笑，并没有分离前夕的悲伤氛围<br>拍完照当晚，最后一次班级聚餐，地点知语山，第一次班聚的地方<br>有始有终，也算圆满<br>一开始也是谈笑风生，但酒过三巡，一些酒量欠佳的同学就开始真情流露了<br>印象深刻的是毕业准备留在大连工作的黄思雨大神<br>喝着喝着就哭了，跑过来向大家敬酒，断断续续说着一些祝福的话语<br>最后又说”大家以后都不在大连了，可能就再也见不到了，希望日后有机会一定要来大连多看看老同学”<br>说实话，可能是因为习惯性的逃避去面对一些事情，我自己在许多事情上都有一种迟钝的情感反应<br>因此在拍照聚餐那天心里也没有太多的离别愁绪，但当看到黄神哭着说这些话的时候内心还是被触动了<br>也渐渐感受到了淡淡的伤感氛围，毕竟有些人，也许是真的再也见不到了<br>那一晚，点点愁绪萦绕于心，挥之不去<br>再之后，便是真正的离别，背起行囊，告别生活了四年的时光<br>未曾停留</p>
-<h2 id="工作的新奇"><a href="#工作的新奇" class="headerlink" title="工作的新奇"></a>工作的新奇</h2><p>初入职场，一切和在学校里都有所不同；新的知识，新的关系，新的作息，新的规范<br>努力学着校内没接触过的新技术新语言新框架，在这里十分感谢我的导师阳阳，真的是一位很有耐心的人，在工作中会很细心的解答我的疑惑，也很细致的规划了一下我的学习路线，让我能够很快地适应新的氛围。</p>
-<p>阳阳是一个很热爱运动的人，经常会约上同事一起去奥林匹克公园跑步，很遗憾直到离职也没能和他一起去跑一次步，希望以后能有机会吧<br>除了阳阳其他的同事也都是一群很可爱的人<br>明明孩子都六七岁了外表却还是像刚毕业学生的小马同学，现在也很怀念当时和他互黑对方的时光<br>性别女性格男的女汉子婉蓉同学，为人大方遇事不慌，真的是我很憧憬的一类人<br>喜欢自己种蔬菜养绿植的伟红同学，最后也没能吃上她家的小番茄真是一件遗憾的事<br>还有吐槽能力满分的黄卓大神，技术能力出众的冀大侠，工作态度认真以身作则的帖阳老大，细腻温柔的hr晓明姐姐。。。<br>虽然公司经常性的会有加班，但在这里的日子真的很充实，自己自身的能力也算是有了很大的提高<br>虽然最后因为各种各样的原因离开了公司，但这接近一年的时光真的让人很难忘<br>而那群可爱的人们啊，咱们有缘再会</p>
-<h2 id="亲人的逝去"><a href="#亲人的逝去" class="headerlink" title="亲人的逝去"></a>亲人的逝去</h2><p>元旦假期的第二天，一如往常的平静，父亲打来电话<br>“最近忙吗？” 淡淡的压抑<br>“还好吧，有什么事吗？” 不详的预感<br>“如果不忙的话回一趟家吧，你外婆去世了” 一片空白<br>订票，出门，坐车，下车，转车，回村<br>回神时面前已是外婆的遗体，表情安详<br>没有眼泪，甚至没有悲伤，只是麻木<br>守在柩前，一夜无眠<br>第一次如此痛恨自己迟钝的情感反应，即便亲人离去，也未留下一滴眼泪<br>只是在离去的火车上，看着窗外，脑海里不断回忆着从前<br>外婆还在的从前</p>
-<h2 id="挚友间分离"><a href="#挚友间分离" class="headerlink" title="挚友间分离"></a>挚友间分离</h2><p>行长和YY酱的矛盾是突然爆发的，不，准确的说是积累多年的矛盾在导火索事件后一股爆发了<br>起因是一句玩笑，之后的发展也像是一个玩笑<br>一开始只是赌气式的互不理睬，互不相让<br>弦绷得太紧终会断，二人最后竟成了互不相见，甚至互相厌恶<br>中间做过补救，奈何没有过这样的经验，可能有点弄巧成拙了<br>于是每年固定的家字辈聚会少了一个人<br>存续了四年的家字辈山口组微信群也解散了<br>三个人一起打台球互黑的情景也不会再现了<br>那天，看着只剩我一个人的家字辈群，有点想哭<br>直至今日，二人依旧没有和好，也不知是否会有和好的那一天<br>同行十余载，请勿相忘于江湖<br><img src="/blogImg/onlymyself.png" alt=""></p>
-<h2 id="自我的成长"><a href="#自我的成长" class="headerlink" title="自我的成长"></a>自我的成长</h2><p>一年前的自己还未毕业，只是个有3个月实习经验的学生，毕业后准备向游戏前端发展<br>一年后的自己已经是在第二家公司工作了，职位是Python后端<br>只能说生活处处都是变化，谁又能想到当年的图书管理员。。。是吧<br>以前的自己总是习惯去逃避，强迫自己不去想那些不顺心意的，久而久之竟成了一种习惯，于是情感反应愈发的迟钝，活得像个旁观者<br>总以为不去想，现在的一切就会一直持续下去，大家还是会一直这样聚集在一起，亲人会永远健康地活着，喜欢的女孩会一直单身，坚固的友谊也会一直天长地久<br>可是这一年里，步入了社会，经历了各种分离，渐渐的意识到了逃避面对只是在压抑自己的情感，害怕受伤的代价是渐渐失去了情感体验的能力<br>而即便抹消了自己的负面情感，那些已经发生的事依然不会有任何的改变，这毕竟是一个唯物的世界，不是唯心<br>毕业后的人们终将各自远行，喜欢的女孩也终会找到自己的归属<br>身边的亲人随着岁月的流逝终将渐渐离去，哪怕是曾经一度认为永不会变的友谊也会突然间分崩离析<br>生活不会一成不变，总会有些变化不会如我们所愿，逃避可耻，不会一直有用<br>苟活于世，不若行之于世</p>
-
+<h2 id="用户的终端设备信息"><a href="#用户的终端设备信息" class="headerlink" title="用户的终端设备信息"></a>用户的终端设备信息</h2><p>flask自带了request，当用户发送一个请求到后端服务器后，通过request可以获取到该请求的头部里的User Agent信息；通过该UA我们就可以获取到用户的终端设备类型、操作系统类型、以及访问该网站的浏览器类型；具体代码实现如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 根据User-Agent获取设备类型，系统类型与浏览器信号</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_device_by_ua</span><span class="params">(ua_string)</span>:</span></div><div class="line">    <span class="comment"># 此处使用了第三方库ua-parser，直接可以对ua进行解析</span></div><div class="line">    <span class="comment"># ua_string通过request.headers['User-Agent']获取</span></div><div class="line">    <span class="keyword">from</span> ua_parser <span class="keyword">import</span> user_agent_parser</div><div class="line">    ua_dict = user_agent_parser.Parse(ua_string)</div><div class="line">    user_agent_dict = ua_dict[<span class="string">'user_agent'</span>]</div><div class="line">    teminal_type = ua_dict[<span class="string">'device'</span>][<span class="string">'family'</span>]</div><div class="line">    <span class="keyword">if</span> teminal_type.upper() == <span class="string">'OTHER'</span>:</div><div class="line">        teminal_type = <span class="string">'PC'</span></div><div class="line">    user_agent_version = (user_agent_dict[<span class="string">'family'</span>] + <span class="string">'/'</span> +</div><div class="line">                          user_agent_dict[<span class="string">'major'</span>] + <span class="string">'.'</span> +</div><div class="line">                          user_agent_dict[<span class="string">'minor'</span>] + <span class="string">'.'</span> +</div><div class="line">                          user_agent_dict[<span class="string">'patch'</span>])</div><div class="line">    <span class="keyword">return</span> dict(zip((<span class="string">'TERMINAL_TYPE'</span>, <span class="string">'OS_TYPE'</span>, <span class="string">'LOGIN_DEV_SOFTWARE'</span>),</div><div class="line">                    (teminal_type,ua_dict[<span class="string">'os'</span>][<span class="string">'family'</span>],</div><div class="line">                    user_agent_version)))</div></pre></td></tr></table></figure>
+<p>ua-parser的基本思路就是对user-agent的那一串字符串做正则匹配，感兴趣的可以去看看github上的<a href="https://github.com/ua-parser/uap-python" target="_blank" rel="external">开源库</a><br>对于user-agent里的那一串字符具体的含义可以参考这篇博客<a href="http://litten.me/2014/09/26/history-of-browser-useragent/" target="_blank" rel="external">浏览器野史 UserAgent列传</a>，写得十分有趣</p>
+<h2 id="用户的IP与地域信息"><a href="#用户的IP与地域信息" class="headerlink" title="用户的IP与地域信息"></a>用户的IP与地域信息</h2><p>通过request我们还可以获取到用户的ip地址与端口号；而获取到ip后我们就可以根据ip来判断用户当时所处的地理位置；用户的ip地址与端口号获取代码实现如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> request</div><div class="line">user_ip = request.remote_addr</div><div class="line">user_port = request.environ.get(<span class="string">'REMOTE_PORT'</span>)</div></pre></td></tr></table></figure></p>
+<p>在获取到ip后，可以通过ip库来找到该ip对应的地域信息；ip库现在网络上比较权威的有淘宝的ip库，qq的纯甄库，以及百度的ip库；<br>不过这几个库都要钱，因此我在github上找了一个开源ip库<a href="https://github.com/lionsoul2014/ip2region" target="_blank" rel="external">ip region库</a>；<br>这个库是一个范围式的ip库，取了几个例子测试了一下，发现准确率还是很不错的；下面是通过这个ip库来做ip与地址转换的代码实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串式的ip地址不好比较大小，因此做个正相关转换</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_transfer_ip</span><span class="params">(ip_addr)</span>:</span></div><div class="line">    ip_set = [int(i) <span class="keyword">for</span> i <span class="keyword">in</span> ip_addr.split(<span class="string">'.'</span>)]</div><div class="line">    ip_number = (ip_set[<span class="number">0</span>] &lt;&lt; <span class="number">24</span>) + (ip_set[<span class="number">1</span>] &lt;&lt; <span class="number">16</span>) + (ip_set[<span class="number">2</span>] &lt;&lt; <span class="number">8</span>) + ip_set[<span class="number">3</span>]</div><div class="line">    <span class="keyword">return</span> ip_number</div><div class="line"><span class="comment"># 使用二分查找法来查找IP对应地域信息</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_scope_search</span><span class="params">(target_ip, ip_dict)</span>:</span></div><div class="line">    ip_scope_list = sorted(ip_dict.keys())</div><div class="line">    start = <span class="number">0</span></div><div class="line">    end = len(ip_scope_list)</div><div class="line">    <span class="comment"># 由于这个ip库的IP地址是范围式的，所以对应二分查找算法也需要做些修改</span></div><div class="line">    <span class="keyword">while</span> start &lt; end - <span class="number">1</span>:</div><div class="line">        mid = (start + end) / <span class="number">2</span></div><div class="line">        <span class="keyword">if</span> ip_scope_list[mid] &lt;= target_ip:</div><div class="line">            start = mid</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            end = mid</div><div class="line">    <span class="keyword">return</span> ip_dict[ip_scope_list[start]]</div><div class="line"><span class="comment"># 通过获取的ip找到相应地域信息</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_location_by_ip</span><span class="params">(ip)</span>:</span></div><div class="line">    ip_scope_list = []</div><div class="line">    ip_info_dict = &#123;&#125;</div><div class="line">    <span class="keyword">with</span> open(<span class="string">'_ip.txt'</span>,<span class="string">'r'</span>) <span class="keyword">as</span> f:</div><div class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</div><div class="line">            <span class="comment"># 该ip库使用的utf-8编码</span></div><div class="line">            line = line.decode(<span class="string">'utf-8'</span>)</div><div class="line">            info_list = line.split(<span class="string">'|'</span>)</div><div class="line">            start_ip = get_transfer_ip(info_list[<span class="number">0</span>])</div><div class="line">            ip_info_dict[start_ip] = info_list</div><div class="line">            ip_scope_list.append(start_ip)</div><div class="line">    ip_scope_list = sorted(list(set(ip_scope_list)))</div><div class="line">    ip_start = binary_search_scope(ip, ip_scope_list)</div><div class="line">    <span class="keyword">return</span> &#123;<span class="string">'loaction'</span>: <span class="string">'|'</span>.join(ip_info_dict[ip_start])&#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -193,7 +189,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">旧事</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
         		</li>
       		
 		</ul>
@@ -249,7 +249,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yaoyaoblog.xyz/2017/04/15/22岁生日/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yaoyaoblog.xyz/2017/04/19/通过request获取用户信息/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,7 +282,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#毕业的分离"><span class="toc-number">1.</span> <span class="toc-text">毕业的分离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作的新奇"><span class="toc-number">2.</span> <span class="toc-text">工作的新奇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#亲人的逝去"><span class="toc-number">3.</span> <span class="toc-text">亲人的逝去</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#挚友间分离"><span class="toc-number">4.</span> <span class="toc-text">挚友间分离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自我的成长"><span class="toc-number">5.</span> <span class="toc-text">自我的成长</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#用户的终端设备信息"><span class="toc-number">1.</span> <span class="toc-text">用户的终端设备信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户的IP与地域信息"><span class="toc-number">2.</span> <span class="toc-text">用户的IP与地域信息</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -304,7 +304,7 @@
   
 
   
-  <div id="valine-ctn" class="valine-ctn" itemprop="articleBody"></div>
+  <div id="valine-ctn" class="valine-ctn"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -419,7 +419,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
             
             <div class="clearfix"></div>
