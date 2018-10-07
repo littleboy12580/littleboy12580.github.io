@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yaoyaoblog.xyz">
-  <title>Archives: 2017/7 | 耀耀的博客</title>
+  <title>通过request获取用户信息 | 耀耀的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="果壳网后端研发一枚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="耀耀的博客">
-<meta property="og:url" content="http://yaoyaoblog.xyz/archives/2017/07/index.html">
+  <meta name="description" content="当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。">
+<meta name="keywords" content="Python,技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过request获取用户信息">
+<meta property="og:url" content="http://yaoyaoblog.xyz/2017/04/19/通过request获取用户信息/index.html">
 <meta property="og:site_name" content="耀耀的博客">
-<meta property="og:description" content="果壳网后端研发一枚">
+<meta property="og:description" content="当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。">
+<meta property="og:updated_time" content="2018-09-30T10:39:09.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="耀耀的博客">
-<meta name="twitter:description" content="果壳网后端研发一枚">
+<meta name="twitter:title" content="通过request获取用户信息">
+<meta name="twitter:description" content="当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。">
   
     <link rel="alternative" href="/atom.xml" title="耀耀的博客" type="application/atom+xml">
   
@@ -142,36 +144,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-通过request获取用户信息" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/15/Python里的元类/" class="archive-article-date">
-  	<time datetime="2017-07-15T13:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/15/Python里的元类/">Python里的元类</a>
+    <h1 class="article-title" itemprop="name">
+      通过request获取用户信息
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/19/通过request获取用户信息/" class="archive-article-date">
+  	<time datetime="2017-04-19T08:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
+</a>
+        
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当我们上网访问某个网站时，有哪些信息会在这一行为中被暴露出来呢？仅以后端而言，因为我用flask比较多，所以就以flask做服务器的为例，来看看通过用户的一个请求我们后端可以收集到用户的哪些信息。</p>
+<a id="more"></a>
+<h2 id="用户的终端设备信息"><a href="#用户的终端设备信息" class="headerlink" title="用户的终端设备信息"></a>用户的终端设备信息</h2><p>flask自带了request，当用户发送一个请求到后端服务器后，通过request可以获取到该请求的头部里的User Agent信息；通过该UA我们就可以获取到用户的终端设备类型、操作系统类型、以及访问该网站的浏览器类型；具体代码实现如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 根据User-Agent获取设备类型，系统类型与浏览器信号</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_device_by_ua</span><span class="params">(ua_string)</span>:</span></div><div class="line">    <span class="comment"># 此处使用了第三方库ua-parser，直接可以对ua进行解析</span></div><div class="line">    <span class="comment"># ua_string通过request.headers['User-Agent']获取</span></div><div class="line">    <span class="keyword">from</span> ua_parser <span class="keyword">import</span> user_agent_parser</div><div class="line">    ua_dict = user_agent_parser.Parse(ua_string)</div><div class="line">    user_agent_dict = ua_dict[<span class="string">'user_agent'</span>]</div><div class="line">    teminal_type = ua_dict[<span class="string">'device'</span>][<span class="string">'family'</span>]</div><div class="line">    <span class="keyword">if</span> teminal_type.upper() == <span class="string">'OTHER'</span>:</div><div class="line">        teminal_type = <span class="string">'PC'</span></div><div class="line">    user_agent_version = (user_agent_dict[<span class="string">'family'</span>] + <span class="string">'/'</span> +</div><div class="line">                          user_agent_dict[<span class="string">'major'</span>] + <span class="string">'.'</span> +</div><div class="line">                          user_agent_dict[<span class="string">'minor'</span>] + <span class="string">'.'</span> +</div><div class="line">                          user_agent_dict[<span class="string">'patch'</span>])</div><div class="line">    <span class="keyword">return</span> dict(zip((<span class="string">'TERMINAL_TYPE'</span>, <span class="string">'OS_TYPE'</span>, <span class="string">'LOGIN_DEV_SOFTWARE'</span>),</div><div class="line">                    (teminal_type,ua_dict[<span class="string">'os'</span>][<span class="string">'family'</span>],</div><div class="line">                    user_agent_version)))</div></pre></td></tr></table></figure>
+<p>ua-parser的基本思路就是对user-agent的那一串字符串做正则匹配，感兴趣的可以去看看github上的<a href="https://github.com/ua-parser/uap-python" target="_blank" rel="external">开源库</a><br>对于user-agent里的那一串字符具体的含义可以参考这篇博客<a href="http://litten.me/2014/09/26/history-of-browser-useragent/" target="_blank" rel="external">浏览器野史 UserAgent列传</a>，写得十分有趣</p>
+<h2 id="用户的IP与地域信息"><a href="#用户的IP与地域信息" class="headerlink" title="用户的IP与地域信息"></a>用户的IP与地域信息</h2><p>通过request我们还可以获取到用户的ip地址与端口号；而获取到ip后我们就可以根据ip来判断用户当时所处的地理位置；用户的ip地址与端口号获取代码实现如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> request</div><div class="line">user_ip = request.remote_addr</div><div class="line">user_port = request.environ.get(<span class="string">'REMOTE_PORT'</span>)</div></pre></td></tr></table></figure></p>
+<p>在获取到ip后，可以通过ip库来找到该ip对应的地域信息；ip库现在网络上比较权威的有淘宝的ip库，qq的纯甄库，以及百度的ip库；<br>不过这几个库都要钱，因此我在github上找了一个开源ip库<a href="https://github.com/lionsoul2014/ip2region" target="_blank" rel="external">ip region库</a>；<br>这个库是一个范围式的ip库，取了几个例子测试了一下，发现准确率还是很不错的；下面是通过这个ip库来做ip与地址转换的代码实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 字符串式的ip地址不好比较大小，因此做个正相关转换</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_transfer_ip</span><span class="params">(ip_addr)</span>:</span></div><div class="line">    ip_set = [int(i) <span class="keyword">for</span> i <span class="keyword">in</span> ip_addr.split(<span class="string">'.'</span>)]</div><div class="line">    ip_number = (ip_set[<span class="number">0</span>] &lt;&lt; <span class="number">24</span>) + (ip_set[<span class="number">1</span>] &lt;&lt; <span class="number">16</span>) + (ip_set[<span class="number">2</span>] &lt;&lt; <span class="number">8</span>) + ip_set[<span class="number">3</span>]</div><div class="line">    <span class="keyword">return</span> ip_number</div><div class="line"><span class="comment"># 使用二分查找法来查找IP对应地域信息</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_scope_search</span><span class="params">(target_ip, ip_dict)</span>:</span></div><div class="line">    ip_scope_list = sorted(ip_dict.keys())</div><div class="line">    start = <span class="number">0</span></div><div class="line">    end = len(ip_scope_list)</div><div class="line">    <span class="comment"># 由于这个ip库的IP地址是范围式的，所以对应二分查找算法也需要做些修改</span></div><div class="line">    <span class="keyword">while</span> start &lt; end - <span class="number">1</span>:</div><div class="line">        mid = (start + end) / <span class="number">2</span></div><div class="line">        <span class="keyword">if</span> ip_scope_list[mid] &lt;= target_ip:</div><div class="line">            start = mid</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            end = mid</div><div class="line">    <span class="keyword">return</span> ip_dict[ip_scope_list[start]]</div><div class="line"><span class="comment"># 通过获取的ip找到相应地域信息</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_location_by_ip</span><span class="params">(ip)</span>:</span></div><div class="line">    ip_scope_list = []</div><div class="line">    ip_info_dict = &#123;&#125;</div><div class="line">    <span class="keyword">with</span> open(<span class="string">'_ip.txt'</span>,<span class="string">'r'</span>) <span class="keyword">as</span> f:</div><div class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</div><div class="line">            <span class="comment"># 该ip库使用的utf-8编码</span></div><div class="line">            line = line.decode(<span class="string">'utf-8'</span>)</div><div class="line">            info_list = line.split(<span class="string">'|'</span>)</div><div class="line">            start_ip = get_transfer_ip(info_list[<span class="number">0</span>])</div><div class="line">            ip_info_dict[start_ip] = info_list</div><div class="line">            ip_scope_list.append(start_ip)</div><div class="line">    ip_scope_list = sorted(list(set(ip_scope_list)))</div><div class="line">    ip_start = binary_search_scope(ip, ip_scope_list)</div><div class="line">    <span class="keyword">return</span> &#123;<span class="string">'loaction'</span>: <span class="string">'|'</span>.join(ip_info_dict[ip_start])&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,19 +199,145 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yaoyaoblog.xyz/2017/04/19/通过request获取用户信息/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/05/03/一位老程序员的反思(译文)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一位老程序员的反思(译文)
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/04/15/22岁生日/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">22岁生日</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#用户的终端设备信息"><span class="toc-number">1.</span> <span class="toc-text">用户的终端设备信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户的IP与地域信息"><span class="toc-number">2.</span> <span class="toc-text">用户的IP与地域信息</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
+
+  
+
+  
+  <div id="valine-ctn" class="valine-ctn article" style="padding: 5% 7.6923%; margin-top: 0;"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+var valine = new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV,
+            el: '#valine-ctn', //
+            app_id: 'emcA3K1pel8Ulj26nz7Jrd10-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: 'G53Ikb8jXVsH1BulgHxgPP7R', // 这里填写上面得到的APP KEY
+            placeholder: '欢迎评论哟' // [v1.0.7 new]留言框占位提示文字
+        })
+</script>
+
+  
 
 
           </div>
@@ -230,8 +368,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
